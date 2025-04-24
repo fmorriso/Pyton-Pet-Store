@@ -22,13 +22,3 @@ class Pet:
 
         return s.to_string()
 
-    def __repr__(self):
-        s = StringBuilder('Pet{')
-
-        s.append('Name: ')
-        s.append(self.type)
-        s.append(', Price: ')
-        s.append(f'{self.price:.2f}')
-
-        s.append('}')
-        return s.to_string()

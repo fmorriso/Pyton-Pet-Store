@@ -31,13 +31,3 @@ class PetStore:
 
         return s.to_string()
 
-
-    def __repr__(self):
-        s = StringBuilder('Pet Store:{')
-
-        for pet in self.available_pets:
-            s.append(pet.__str__())
-            s.append(', ')
-
-        s.append('}')
-        return s.to_string()
