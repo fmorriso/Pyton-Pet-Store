@@ -10,6 +10,17 @@ class Pet:
     price: Optional[float] = 0
 
     def __str__(self):
+        s = StringBuilder()
+
+        s.append('Type: ')
+        s.append(self.type)
+
+        s.append(', Price: ')
+        s.append(f'${self.price:.2f}')
+
+        return s.to_string()
+
+    def __repr__(self):
         s = StringBuilder('Pet{')
 
         s.append('Name: ')
@@ -19,6 +30,3 @@ class Pet:
 
         s.append('}')
         return s.to_string()
-
-    def __repr__(self):
-        return self.__str__()

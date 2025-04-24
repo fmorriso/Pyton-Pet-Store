@@ -18,14 +18,21 @@ class PetStore:
 
 
     def __str__(self):
+        s = StringBuilder('Pet Store:\n')
+
+        for pet in self.available_pets:
+            s.append(f'\t{pet.__str__()}')
+            s.append('\n')
+
+        return s.to_string()
+
+
+    def __repr__(self):
         s = StringBuilder('Pet Store:{')
+
         for pet in self.available_pets:
             s.append(pet.__str__())
             s.append(', ')
 
         s.append('}')
         return s.to_string()
-
-
-    def __repr__(self):
-        return self.__str__()
