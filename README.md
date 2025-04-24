@@ -12,9 +12,16 @@ A pet store written in Python, not a pet store that currently sells pythons.
 
 ## Change History
 
-| Date       | Description      |
-|:-----------|:-----------------|
-| 2025-04-23 | Initial creation |
+| Date       | Description                                                      |
+|:-----------|:-----------------------------------------------------------------|
+| 2025-04-23 | Initial creation                                                 |
+| 2025-04-24 | Differentiate between str() and repr(), add to_json() capability |
 
 ## References
-* []()
+
+* [Master Python dataclasses [In-Depth Tutorial]](https://www.golinuxcloud.com/python-dataclasses/)
+* [Understanding and Using Data Classes in Python](https://datagy.io/python-data-classes/)
+* [Python Data Class: A Better Way to Store Data](https://python.land/python-data-classes)
+* [Python Dataclass](https://docs.python.org/3/library/dataclasses.html)
+* [Understanding Python Dataclasses](https://www.geeksforgeeks.org/understanding-python-dataclasses/)
+* [Python Data Classes (With Examples)](https://pyseek.com/2025/03/python-data-classes/#google_vignette)

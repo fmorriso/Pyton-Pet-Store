@@ -15,15 +15,18 @@ def get_package_version(package_name: str) -> str:
 def main():
     cat = Pet('cat', 12.50)
     print(cat)
+    print(cat.to_json())
 
     dog = Pet('dog')
     print(dog)
+    print(dog.to_json())
 
     pet_store = PetStore()
     pet_store.add_pet(cat)
     pet_store.add_pet(dog)
 
     print(pet_store)
+    print(pet_store.to_json())
 
 
 if __name__ == '__main__':
