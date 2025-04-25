@@ -2,9 +2,9 @@
 
 A pet store written in Python, not a pet store that currently sells pythons.
 
-The Pet and PetStore classes use both:
-* @dataclass - to simplify creation of Pet and PetStore objects.
-* @dataclass_json - to simplify converting instances of Pet and Petstore to JSON. 
+The *Pet* and *PetStore* classes use both:
+* @dataclass - to simplify creation of *Pet* and *PetStore* objects.
+* @dataclass_json - to simplify converting instances of *Pet* and *Petstore* to JSON. 
 
 ## Tools Used
 
