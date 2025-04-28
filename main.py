@@ -12,6 +12,7 @@ def get_python_version() -> str:
 def get_package_version(package_name: str) -> str:
     return version(package_name)
 
+
 def main():
     cat = Pet('cat', 12.50)
     print('\nCat:')
