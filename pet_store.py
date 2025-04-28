@@ -18,8 +18,10 @@ class PetStore:
             self.available_pets = []
 
 
-    def add_pet(self, pet: Pet) -> None:
-        self.available_pets.append(pet)
+    def add_pet(self, *pets: Pet) -> None:
+        pet: Pet
+        for pet in pets:
+            self.available_pets.append(pet)
 
 
     def __str__(self):
@@ -30,4 +32,3 @@ class PetStore:
             s.append('\n')
 
         return s.to_string()
-

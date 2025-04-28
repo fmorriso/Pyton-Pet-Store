@@ -20,6 +20,7 @@ The *Pet* and *PetStore* classes use both:
 |:-----------|:-----------------------------------------------------------------|
 | 2025-04-23 | Initial creation                                                 |
 | 2025-04-24 | Differentiate between str() and repr(), add to_json() capability |
+| 2025-04-28 | Modify add_pet() to allow multiple pet objects                   |
 
 ## References
 

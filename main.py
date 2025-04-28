@@ -15,20 +15,24 @@ def get_package_version(package_name: str) -> str:
 
 def main():
     cat = Pet('cat', 12.50)
-    print('\nCat:')
-    print(cat)
-    print(repr(cat))
+    print(f'\nCat:\n{cat}')
+    print(f'repr: {repr(cat)}')
     print(cat.to_json())
 
-    print('\nDog:')
     dog = Pet('dog')
-    print(dog)
-    print(repr(dog))
+    print(f'\nDog:\n{dog}')
+    dog.price = 9.99
+    print(f'repr: {repr(dog)}')
     print(dog.to_json())
 
+    rabbit = Pet('rabbit', 7.50)
+    print(f'\nRabbit:\n{rabbit}')
+    print(f'repr: {repr(rabbit)}')
+    print(rabbit.to_json())
+
     pet_store = PetStore()
-    pet_store.add_pet(cat)
-    pet_store.add_pet(dog)
+    pet_store.add_pet(cat, dog)
+    pet_store.add_pet(rabbit)
 
     print(f'\n{pet_store}')
     print(pet_store.to_json())
