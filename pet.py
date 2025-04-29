@@ -13,9 +13,9 @@ class Pet:
     birthday: Optional[dt.date] = datetime.now(dt.timezone.utc).date()
 
 
-    # dt.datetime.now(dt.timezone.utc) - relativedelta(years = 1, months = 1))
-
     def age(self) -> Optional[Tuple[int, str]]:
+        """return a tuple containing the whole number of years or months followed by a string of either months or
+        years"""
         if self.birthday is None:
             return None
         today = datetime.now(dt.timezone.utc).date()

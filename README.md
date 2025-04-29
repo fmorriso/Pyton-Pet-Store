@@ -12,7 +12,7 @@ The *Pet* and *PetStore* classes use:
 |:----------------|------------:|
 | Python          |      3.13.3 |
 | orjson          |     3.10.17 |
-| python-dateutil | 2.9.0.post0 |
+| pendulum        |       3.1.0 |
 | PyCharm         |    2025.1.0 |
 | VSCode          |      1.99.0 |
 
@@ -34,3 +34,4 @@ The *Pet* and *PetStore* classes use:
 * [Understanding Python Dataclasses](https://www.geeksforgeeks.org/understanding-python-dataclasses/)
 * [Python Data Classes (With Examples)](https://pyseek.com/2025/03/python-data-classes/#google_vignette)
 * [orjson documentation](https://github.com/ijl/orjson)
+* [pendulum](https://pendulum.eustace.io/docs/)
