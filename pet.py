@@ -32,10 +32,10 @@ class Pet:
             age_months = (today.year - birthdate.year) * 12 + today.month - birthdate.month
             if today.day < birthdate.day:
                 age_months -= 1
-            return (age_months, 'months')
+            return age_months, 'months'
 
         # Otherwise, return age in years
-        return (age_years, 'years')
+        return age_years, 'years'
 
 
     def __str__(self):
