@@ -1,6 +1,8 @@
 import sys
+from datetime import date
 from importlib.metadata import version
 
+from dateutil.relativedelta import relativedelta
 from orjson import orjson
 
 from pet import Pet
@@ -17,19 +19,21 @@ def get_package_version(package_name: str) -> str:
 
 def main():
     cat = Pet('cat', 12.50)
+    cat.birthday = date.today() - relativedelta(years = 9)
     print(f'\nCat:\n{cat}')
     print(f'repr: {repr(cat)}')
     cat_json: str = orjson.dumps(cat, option = orjson.OPT_INDENT_2).decode('utf-8')
     print(f'orJSON: {cat_json}')
 
     dog = Pet('dog')
-    print(f'\nDog:\n{dog}')
     dog.price = 9.99
+    dog.birthday = date.today() - relativedelta(years = 2, months = 3)
+    print(f'\nDog:\n{dog}')
     print(f'repr: {repr(dog)}')
     dog_json: str = orjson.dumps(dog, option = orjson.OPT_INDENT_2).decode('utf-8')
     print(f'orJSON: {dog_json}')
 
-    rabbit = Pet('rabbit', 7.50)
+    rabbit = Pet('rabbit', 7.50, date.fromisoformat('2025-01-29'))
     print(f'\nRabbit:\n{rabbit}')
     print(f'repr: {repr(rabbit)}')
     rabbit_json: str = orjson.dumps(rabbit, option = orjson.OPT_INDENT_2).decode('utf-8')
