@@ -16,12 +16,14 @@ def get_python_version() -> str:
 def get_package_version(package_name: str) -> str:
     return version(package_name)
 
+
 def to_plain_date(p_date: pendulum.Date) -> date:
     return date(p_date.year, p_date.month, p_date.day)
 
+
 def main():
     cat = Pet('cat', 12.50)
-    cat.birthday = to_plain_date(pendulum.now('UTC').subtract(years=9).date())
+    cat.birthday = to_plain_date(pendulum.now('UTC').subtract(years = 9).date())
     print(f'\nCat:\n{cat}')
     print(f'repr: {repr(cat)}')
     cat_json: str = orjson.dumps(cat, option = orjson.OPT_INDENT_2).decode('utf-8')
@@ -29,7 +31,7 @@ def main():
 
     dog = Pet('dog')
     dog.price = 9.99
-    dog.birthday = to_plain_date(pendulum.now('UTC').subtract(years=2, months=3).date())
+    dog.birthday = to_plain_date(pendulum.now('UTC').subtract(years = 2, months = 3).date())
     print(f'\nDog:\n{dog}')
     print(f'repr: {repr(dog)}')
     dog_json: str = orjson.dumps(dog, option = orjson.OPT_INDENT_2).decode('utf-8')
