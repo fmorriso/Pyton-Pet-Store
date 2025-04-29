@@ -1,13 +1,10 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from dataclasses_json import dataclass_json
-
 from pet import Pet
 from string_builder import StringBuilder
 
 
-@dataclass_json
 @dataclass
 class PetStore:
     available_pets: Optional[list[Pet]] = field(default_factory = list)

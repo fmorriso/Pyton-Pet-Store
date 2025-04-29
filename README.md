@@ -3,16 +3,18 @@
 A pet store written in Python, not a pet store that currently sells pythons.
 
 The *Pet* and *PetStore* classes use both:
+
 * __@dataclass__ - to simplify creation of *Pet* and *PetStore* objects.
-* __@dataclass_json__ - to simplify converting instances of *Pet* and *Petstore* to JSON. 
+* __@dataclass_json__ - to simplify converting instances of *Pet* and *Petstore* to JSON.
 
 ## Tools Used
 
-| Tool     |  Version |
-|:---------|---------:|
-| Python   |   3.13.3 |
-| PyCharm  | 2025.1.0 |
-| VSCode   |   1.99.0 |
+| Tool             |  Version |
+|:-----------------|---------:|
+| Python           |   3.13.3 |
+| orjson           |  3.10.17 |
+| PyCharm          | 2025.1.0 |
+| VSCode           |   1.99.0 |
 
 ## Change History
 
@@ -21,6 +23,7 @@ The *Pet* and *PetStore* classes use both:
 | 2025-04-23 | Initial creation                                                 |
 | 2025-04-24 | Differentiate between str() and repr(), add to_json() capability |
 | 2025-04-28 | Modify add_pet() to allow multiple pet objects                   |
+| 2025-04-29 | replace dataclasses_json with orjson                             |
 
 ## References
 

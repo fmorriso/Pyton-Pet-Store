@@ -1,6 +1,8 @@
 import sys
 from importlib.metadata import version
 
+from orjson import orjson
+
 from pet import Pet
 from pet_store import PetStore
 
@@ -17,30 +19,33 @@ def main():
     cat = Pet('cat', 12.50)
     print(f'\nCat:\n{cat}')
     print(f'repr: {repr(cat)}')
-    print(cat.to_json())
+    cat_json: str = orjson.dumps(cat, option = orjson.OPT_INDENT_2).decode('utf-8')
+    print(f'orJSON: {cat_json}')
 
     dog = Pet('dog')
     print(f'\nDog:\n{dog}')
     dog.price = 9.99
     print(f'repr: {repr(dog)}')
-    print(dog.to_json())
+    dog_json: str = orjson.dumps(dog, option = orjson.OPT_INDENT_2).decode('utf-8')
+    print(f'orJSON: {dog_json}')
 
     rabbit = Pet('rabbit', 7.50)
     print(f'\nRabbit:\n{rabbit}')
     print(f'repr: {repr(rabbit)}')
-    print(rabbit.to_json())
+    rabbit_json: str = orjson.dumps(rabbit, option = orjson.OPT_INDENT_2).decode('utf-8')
+    print(f'orJSON: {rabbit_json}')
 
     pet_store = PetStore()
     pet_store.add_pet(cat, dog)
     pet_store.add_pet(rabbit)
 
     print(f'\n{pet_store}')
-    print(pet_store.to_json())
+    pet_store_json: str = orjson.dumps(pet_store, option = orjson.OPT_INDENT_2).decode('utf-8')
+    print(f'orJSON: {pet_store_json}')
 
 
 if __name__ == '__main__':
     print(f'Python version: {get_python_version()}')
-    print(f'PySide6 version: {get_package_version("pyside6")}')
-    print(f'PySide6-Addons version: {get_package_version("pyside6-addons")}')
-    print(f'PyAutoGUI version: {get_package_version("pyautogui")}')
+    print(f'orJSON version: {get_package_version("orjson")}')
+
     main()
