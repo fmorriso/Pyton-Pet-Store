@@ -8,12 +8,13 @@ The *Pet* and *PetStore* classes use:
 
 ## Tools Used
 
-| Tool             |  Version |
-|:-----------------|---------:|
-| Python           |   3.13.3 |
-| orjson           |  3.10.17 |
-| PyCharm          | 2025.1.0 |
-| VSCode           |   1.99.0 |
+| Tool            |     Version |
+|:----------------|------------:|
+| Python          |      3.13.3 |
+| orjson          |     3.10.17 |
+| python-dateutil | 2.9.0.post0 |
+| PyCharm         |    2025.1.0 |
+| VSCode          |      1.99.0 |
 
 ## Change History
 

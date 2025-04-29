@@ -50,6 +50,7 @@ def main():
 
 if __name__ == '__main__':
     print(f'Python version: {get_python_version()}')
+    print(f'python-dateutil version: {get_package_version("python-dateutil")}')
     print(f'orJSON version: {get_package_version("orjson")}')
 
     main()
