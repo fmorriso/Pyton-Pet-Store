@@ -31,7 +31,21 @@ def save_pet_store(store: PetStore) -> None:
         f.write(pet_store_json)
 
 
+def load_previous_pet_store() -> PetStore:
+    pet_store_path = Path(PET_STORE_FILE)
+    if pet_store_path.is_file():
+        store_dict = orjson.loads(pet_store_path.read_bytes())
+        # print(f'{type(store_dict)=}')
+        store = PetStore(**store_dict)
+        return store
+
+    return PetStore()
+
+
 def main():
+    pet_store = load_previous_pet_store()
+    print(f'Original \n{pet_store}')
+
     cat = Pet('cat', 12.50)
     cat.birthday = to_plain_date(pendulum.now('UTC').subtract(years = 9).date())
     print(f'\nCat:\n{cat}')
@@ -57,7 +71,7 @@ def main():
     pet_store.add_pet(cat, dog)
     pet_store.add_pet(rabbit)
 
-    print(f'\n{pet_store}')
+    print(f'Revised \n{pet_store}')
     pet_store_json: str = orjson.dumps(pet_store, option = orjson.OPT_INDENT_2).decode('utf-8')
     print(f'orJSON: {pet_store_json}')
 

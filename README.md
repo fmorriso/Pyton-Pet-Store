@@ -25,7 +25,7 @@ The *Pet* and *PetStore* classes use:
 | 2025-04-24 | Differentiate between str() and repr(), add to_json() capability |
 | 2025-04-28 | Modify add_pet() to allow multiple pet objects                   |
 | 2025-04-29 | replace dataclasses_json with orjson, add pet birthday           |
-| 2025-04-30 | add ability to save the pet store to the file system             |
+| 2025-04-30 | add ability to read/write the pet store from/to the file system  |
 
 ## References
 
