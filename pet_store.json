@@ -1,0 +1,19 @@
+{
+  "available_pets": [
+    {
+      "type": "cat",
+      "price": 12.5,
+      "birthday": "2016-04-30"
+    },
+    {
+      "type": "dog",
+      "price": 9.99,
+      "birthday": "2023-01-30"
+    },
+    {
+      "type": "rabbit",
+      "price": 7.5,
+      "birthday": "2025-01-29"
+    }
+  ]
+}

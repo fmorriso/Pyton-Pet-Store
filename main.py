@@ -1,12 +1,15 @@
 import sys
 from datetime import date
 from importlib.metadata import version
+from pathlib import Path
 
 import pendulum
 from orjson import orjson
 
 from pet import Pet
 from pet_store import PetStore
+
+PET_STORE_FILE = 'pet_store.json'
 
 
 def get_python_version() -> str:
@@ -19,6 +22,13 @@ def get_package_version(package_name: str) -> str:
 
 def to_plain_date(p_date: pendulum.Date) -> date:
     return date(p_date.year, p_date.month, p_date.day)
+
+
+def save_pet_store(store: PetStore) -> None:
+    pet_store_path = Path(PET_STORE_FILE)
+    with open(pet_store_path, 'w') as f:
+        pet_store_json = orjson.dumps(store, option = orjson.OPT_INDENT_2).decode('utf-8')
+        f.write(pet_store_json)
 
 
 def main():
@@ -51,10 +61,14 @@ def main():
     pet_store_json: str = orjson.dumps(pet_store, option = orjson.OPT_INDENT_2).decode('utf-8')
     print(f'orJSON: {pet_store_json}')
 
+    save_pet_store(pet_store)
+
 
 if __name__ == '__main__':
     print(f'Python version: {get_python_version()}')
     print(f'pendulum version: {get_package_version("pendulum")}')
     print(f'orJSON version: {get_package_version("orjson")}')
+    print(f'pathlib version: {get_package_version("pathlib")}')
+    print(f'The current date/time UTC is {pendulum.now().in_tz("UTC")}')
 
     main()
